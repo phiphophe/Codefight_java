@@ -1,0 +1,13 @@
+1. add
+	int add(int param1, int param2) {
+	return param1 + param2;
+	}
+2.centuryFromYear
+	int centuryFromYear(int year) {
+    	return 1 + (year - 1) / 100;
+	}
+3.checkPalindrome
+	boolean checkPalindrome(String inputString) {
+    	 String reverse = new StringBuffer(inputString).reverse().toString();
+     	return reverse.equalsIgnoreCase(inputString);
+	}
