@@ -1,0 +1,75 @@
+4. adjacentElementsProduct
+    int adjacentElementsProduct(int[] inputArray) {
+    int i , j=inputArray[0]*inputArray[0+1];
+    for (i =0; i < inputArray.length-1; i++)
+	 {
+                          if (inputArray[i]*inputArray[i+1] > j) {
+                          j = inputArray[i]*inputArray[i+1];
+                    }            
+        }    
+    return j;    
+}
+
+5.shapeArea
+int shapeArea(int n) {
+    return ((2*n-1)*(2*n-1)) - ((n*n-n)/2)*4;
+}
+
+6.Make Array Consecutive 2
+int makeArrayConsecutive2(int[] statues) {
+ Arrays.sort(statues);
+ int count=0;
+  for(int i=0; i<=statues.length-2;i++)
+  {
+    if(statues[i] != (statues[i+1] + 1))
+    {
+      count = count + (statues[i+1]-statues[i]) -1;
+    }
+  }
+  return count;
+}
+Make 
+
+7.almostIncreasingSequence
+boolean almostIncreasingSequence(int[] sequence) {
+int flag = 0;
+    int i = 0;
+    while(i<sequence.length-1){
+        if(sequence[i] < sequence[i+1]){
+            i = i+1;
+            continue;
+        } 
+        else {
+            flag = flag + 1;
+            if(i>0 && i+2 < sequence.length && sequence[i+1] <= sequence[i-1] && sequence[i+2] <= sequence[i]){
+                flag = flag + 1;
+            } else {
+                i = i+1;
+            }
+            if(flag > 1){
+                return false;
+            }
+        }
+    }
+    return true;         
+}
+
+8.matrixElementsSum
+int matrixElementsSum(int[][] matrix) {  
+    int price=0;
+    for(int i=0; i<matrix[0].length;i++)
+    {
+        for(int j=0; j<matrix.length;j++)
+        {
+            if(matrix[j][i] == 0)
+            {
+                break;
+            }
+            else
+            {
+                price += matrix[j][i];
+            }
+        }
+    }
+    return price;
+}
